@@ -3,23 +3,22 @@ import { useState, useEffect } from 'react';
 import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
 
+const url =
+  'https://api.themoviedb.org/3/movie/popular?api_key=d0f5f2e135336200362af8a1a73acb17';
+
 const App = () => {
   const [movies, setMovies] = useState([]);
 
-  const getMovieRequest = async () => {
-    const url =
-      'https://api.themoviedb.org/3/movie/popular?api_key=d0f5f2e135336200362af8a1a73acb17';
-
+  const getPopularMovies = async () => {
     const response = await fetch(url);
     const responseJson = await response.json();
-    console.log('response', responseJson);
     if (responseJson.results) {
       setMovies(responseJson.results);
     }
   };
 
   useEffect(() => {
-    getMovieRequest();
+    getPopularMovies();
   }, []);
 
   return (
