@@ -31,7 +31,7 @@ const MovieList = (props: MovieListProps) => {
       {props.movies.map((movie) => (
         <div
           key={nanoid(6)}
-          className="image-container d-flex justify-content-start m-3"
+          className="image-container d-flex justify-content-start m-2"
         >
           <div className="d-flex  flex-column">
             <img src={`${image_url}/${movie.poster_path}`} alt="movie"></img>
