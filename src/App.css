@@ -33,3 +33,9 @@ body {
   padding: 20px;
   text-align: center;
 }
+
+.like {
+  background-color: #fff;
+  color: #652c2c;
+  padding: 4;
+}
