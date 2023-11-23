@@ -3,6 +3,7 @@ import { Movie, addToLiked, removeFromLiked } from '../slices/liked';
 import { useDispatch, useSelector } from 'react-redux';
 import IconButton from '@mui/material/IconButton';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { nanoid } from '@reduxjs/toolkit';
 
 const image_url = 'https://image.tmdb.org/t/p/w185';
 
@@ -27,8 +28,11 @@ const MovieList = (props: MovieListProps) => {
 
   return (
     <>
-      {props.movies.map((movie: any, index: any) => (
-        <div className="image-container d-flex justify-content-start m-3">
+      {props.movies.map((movie) => (
+        <div
+          key={nanoid(6)}
+          className="image-container d-flex justify-content-start m-3"
+        >
           <div className="d-flex  flex-column">
             <img src={`${image_url}/${movie.poster_path}`} alt="movie"></img>
 

@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface Movie {
   id: string;
+  poster_path: string;
 }
 
 export type State = Array<Movie>;
